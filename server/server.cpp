@@ -171,8 +171,7 @@ int main(int argc, char *argv[])
                                             if (!args["id"].isNull())
                                             {
                                                 server.broadcastMessage("message", args);
-                                            }
-                                        }); });
+                                            } }); });
     server.message("login", [&mainEventLoop, &server, &users](ClientConnection conn, const Json::Value &args)
                    { mainEventLoop.post([conn, args, &server, &users]()
                                         {
@@ -216,8 +215,7 @@ int main(int argc, char *argv[])
                                                     newArg["Error"] = "ID and/or PW is wrong";
                                                     server.sendMessage(conn, "error", newArg);
                                                 }
-                                            }
-                                        }); });
+                                            } }); });
 
     server.message("register", [&mainEventLoop, &server, &users, &email](ClientConnection conn, const Json::Value &args)
                    { mainEventLoop.post([conn, args, &server, &users, &email]()
@@ -247,26 +245,6 @@ int main(int argc, char *argv[])
     // Start the networking thread
     std::thread serverThread([&server]()
                              { server.run(PORT_NUMBER); });
-
-    // Start a keyboard input thread that reads from stdin
-    std::thread inputThread([&server, &mainEventLoop]()
-                            {
-		string input;
-		while (1)
-		{
-			//Read user input from stdin
-			std::getline(std::cin, input);
-			
-			//Broadcast the input to all connected clients (is sent on the network thread)
-			Json::Value payload;
-			payload["input"] = input;
-			server.broadcastMessage("userInput", payload);
-			
-			//Debug output on the main thread
-			mainEventLoop.post([]() {
-				std::clog << "User input debug output on the main thread" << std::endl;
-			});
-		} });
 
     // Start the event loop for the main thread
     asio::io_service::work work(mainEventLoop);
