@@ -1,0 +1,17 @@
+.login {
+  padding: 30px 30px;
+}
+
+.login_content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-inline: 30px;
+  flex-direction: row;
+}
+
+@media (max-width: 1200px) {
+  .login_image {
+    display: none;
+  }
+}

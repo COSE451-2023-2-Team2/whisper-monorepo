@@ -1,0 +1,18 @@
+.input_form {
+  input {
+    border: none;
+    background-color: #ffffff00;
+    padding: 17px 21px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    &::placeholder {
+      color: #ababab;
+      font-family: "Apple SD Gothic Neo;-Light", Helvetica;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: normal;
+    }
+  }
+}

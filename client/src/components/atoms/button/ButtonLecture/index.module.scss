@@ -1,0 +1,21 @@
+.button_lecture {
+  button {
+    border-radius: 6px;
+    border: 0.6px solid #749bff;
+    background: #749bff;
+    width: 157px;
+    height: 51px;
+    color: #fff;
+    font-family: Apple SD Gothic Neo;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  &.selected {
+    button {
+      background: #1c58f2;
+    }
+  }
+}

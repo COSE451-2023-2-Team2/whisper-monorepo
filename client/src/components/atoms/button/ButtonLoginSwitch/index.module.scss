@@ -1,0 +1,27 @@
+.button_login_switch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    color: #7d7d7d;
+    text-align: center;
+    font-family: Apple SD Gothic Neo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  button {
+    color: #000;
+    border: none;
+    background-color: #ffffff;
+    font-family: Apple SD Gothic Neo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}

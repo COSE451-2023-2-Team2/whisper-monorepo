@@ -1,0 +1,50 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+.idea
+.DS_Store
+.DS_Store
+cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-2d2d9ffb975989340593.json
+cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-c55d38622a49b266c624.json
+cmake-build-debug/.cmake/api/v1/reply/index-2023-10-26T07-20-53-0649.json
+cmake-build-debug/.cmake/api/v1/reply/index-2023-10-28T04-31-26-0121.json
+cmake-build-debug/CMakeFiles/clion-Debug-log.txt
+cmake-build-debug/CMakeFiles/Makefile.cmake
+cmake-build-debug/server
+cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-c55d38622a49b266c624.json
+cmake-build-debug/.cmake/api/v1/reply/index-2023-10-26T07-20-53-0649.json
+cmake-build-debug/CMakeFiles/clion-Debug-log.txt
+cmake-build-debug/CMakeFiles/Makefile.cmake
+cmake-build-debug/server
+cmake-build-debug/server
+cmake-build-debug/Testing/Temporary/LastTest.log

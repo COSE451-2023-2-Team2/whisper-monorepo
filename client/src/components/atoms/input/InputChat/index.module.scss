@@ -1,0 +1,35 @@
+.input_chat {
+  display: flex;
+  justify-content: center;
+
+  input {
+    border: none;
+    background-color: #ffffff00;
+    width: 100%;
+    box-sizing: border-box;
+    transition: color 0.3s; // 플레이스홀더 색상 변화를 위한 트랜지션 추가
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: var(--Whisper-Gray, #7a7878);
+      font-family: Apple SD Gothic Neo;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      position: absolute;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      transform-origin: left;
+    }
+  }
+
+  &.focused {
+    input::placeholder {
+      transform: translateX(10px); // 이동할 거리 조절
+      opacity: 0; // 투명도를 0으로 조절
+    }
+  }
+}

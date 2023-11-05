@@ -1,0 +1,40 @@
+.message_container {
+  display: flex;
+  align-items: end;
+  margin-bottom: 5px;
+
+  &.mine {
+    align-self: flex-end;
+  }
+
+  &.others {
+    align-self: flex-start;
+  }
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+
+  &.mine {
+    align-items: flex-end;
+  }
+
+  &.others {
+    align-items: flex-start;
+  }
+}
+
+.message_time {
+  display: flex;
+
+  &.mine {
+    justify-content: right;
+    margin-right: 25px;
+  }
+
+  &.others {
+    justify-content: left;
+    margin-left: 25px;
+  }
+}

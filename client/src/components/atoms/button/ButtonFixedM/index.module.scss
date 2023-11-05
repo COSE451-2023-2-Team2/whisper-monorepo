@@ -1,0 +1,18 @@
+.button_fixed_m {
+  height: 40px;
+  width: 120px;
+  border-radius: 6px;
+  border: 0px;
+  background: #000;
+  color: #fff;
+  font-family: Apple SD Gothic Neo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+
+.button_modal:disabled {
+  background: #7a7878;
+}

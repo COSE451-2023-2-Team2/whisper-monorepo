@@ -1,0 +1,18 @@
+.button_submit {
+  width: 100%;
+  height: 50px;
+  border: 0px;
+  border-radius: 6px;
+  background: #000;
+  color: #fff;
+  font-family: Apple SD Gothic Neo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+
+.button_submit:disabled {
+  background: #7a7878;
+}

@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  whisper-client:
+    build:
+      context: ./client 
+    container_name: whisper-client
+    ports:
+      - "3000:3000"
+    networks:
+      - whisper-net
+    depends_on:
+      - whisper-server
+
+  whisper-server:
+    build:
+      context: ./server 
+    container_name: whisper-server
+    ports:
+      - "8000:8000"
+    networks:
+      - whisper-net
+
+networks:
+  whisper-net: 

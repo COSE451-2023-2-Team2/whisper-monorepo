@@ -1,0 +1,24 @@
+.chat_list_template {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  min-height: 590px;
+  margin-right: 24px;
+}
+
+.chat_list_status {
+  height: 60px;
+  border-radius: 10px;
+  border: 0.5px solid var(--Whisper-Gray, #7a7878);
+  background: #fff;
+  box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.05);
+  margin-bottom: 15px;
+}
+
+.chat_list {
+  border-radius: 10px;
+  border: 0.5px solid var(--Whisper-Gray, #7a7878);
+  background: #fff;
+  box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.05);
+  flex: 1;
+}

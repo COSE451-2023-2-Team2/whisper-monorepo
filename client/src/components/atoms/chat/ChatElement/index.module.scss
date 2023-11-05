@@ -1,0 +1,50 @@
+.chat_message {
+  display: inline-block;
+  position: relative;
+  height: auto;
+
+  &.not_last {
+    margin-bottom: 5px;
+  }
+}
+
+.bubble {
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+
+  &.mine {
+    background-color: #1c58f2;
+    right: 0;
+  }
+
+  &.others {
+    background-color: #7a7878;
+    left: 0;
+  }
+}
+
+.message {
+  max-width: 460px;
+  word-wrap: break-word; /* max-width를 넘을 시 줄 바꿈 */
+  position: relative; /* 겹치지 않도록 상대 위치 설정 */
+  margin-bottom: 5px;
+  border-radius: 25px;
+  padding: 7px 20px;
+  color: #ffffff;
+  font-family: "Apple SD Gothic Neo;-Light", Helvetica;
+  font-size: 14px;
+  font-weight: 300;
+
+  &.mine {
+    background-color: #1c58f2;
+    margin-right: 5px;
+  }
+
+  &.others {
+    background-color: #7a7878;
+    margin-left: 5px;
+  }
+}

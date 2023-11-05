@@ -1,0 +1,24 @@
+.lecture_select_field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 140.5px;
+}
+
+.lecture_label {
+  height: 17px;
+  color: #000;
+  font-family: Apple SD Gothic Neo;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.lecture_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 112px;
+}

@@ -1,0 +1,18 @@
+.button_fixed_s {
+  width: 100px;
+  height: 30px;
+  border: 0px;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-family: Apple SD Gothic Neo;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.button_fixed_s:disabled {
+  background: #7a7878;
+}

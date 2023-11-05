@@ -1,0 +1,18 @@
+.login_form {
+  width: 100%;
+  height: 341.5px;
+}
+
+.login_input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 189.5px;
+  margin-bottom: 100.5px;
+}
+
+.login_button {
+  button {
+    margin-bottom: 18px;
+  }
+}

@@ -1,0 +1,25 @@
+.modal_content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 21;
+}
+
+.modal_background,
+.null_modal_background {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+}
+.null_modal_background {
+  background: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  backdrop-filter: blur(0px);
+}

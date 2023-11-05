@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  height: 160px;
+  padding: 20px 20px;
+  border-radius: 10px;
+  border: 0.5px solid #878787;
+  background: #fff;
+  box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  color: var(#000);
+  text-align: center;
+  font-family: Apple SD Gothic Neo;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 10px;
+}
+
+.content {
+  color: var(#000);
+  text-align: center;
+  font-family: Apple SD Gothic Neo;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 153.846% */
+}
+
+.button {
+  align-items: center;
+}
