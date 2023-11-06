@@ -4,11 +4,8 @@ import Image from "next/image";
 import Header from "@/components/layouts/Header";
 import LoginTemplate from "@/components/templates/LoginTemplate";
 import Popup from "@/components/popup";
-import useSocket from "@/hooks/useSocket";
 
 export default function Login() {
-  useSocket();
-
   return (
     <div className={s.login}>
       <Header></Header>
