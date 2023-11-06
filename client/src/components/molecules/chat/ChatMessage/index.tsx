@@ -15,8 +15,10 @@ export default function ChatMessage(props: ChatMessageProps) {
         {props.messages.map((message, index) => (
           <ChatElement
             key={index}
+            isFirst={index === 0}
             isLast={index === props.messages.length - 1}
             isMine={props.isMine}
+            userName={props.userName}
             message={message.message}
           />
         ))}
