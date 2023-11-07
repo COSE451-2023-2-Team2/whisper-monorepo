@@ -27,20 +27,17 @@ export default function useSocket() {
   const [, storeChat] = useContext(ChatContext);
 
   const socketInitializer = useCallback(async () => {
-    console.log("Starting new connection...");
     const socket = new WebSocket("ws://localhost:8000");
 
     socket.addEventListener("open", (event) => {
-      console.log("Server connected!");
       setSocket(socket);
       setIsSocketConnected(true);
     });
 
     socket.addEventListener("message", (event: MessageEvent) => {
-      // FIXME 서버에서 input으로 내려오는 문제
+      // NOTE 서버에서 input으로 내려오는 문제
       const message = JSON.parse(event.data);
       if (message.MessageType === "message") {
-        console.log(message.input);
         storeChat({
           userName: message.id,
           message: message.message === undefined ? message.input : message.message,

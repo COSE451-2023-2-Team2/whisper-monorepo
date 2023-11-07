@@ -15,14 +15,12 @@ export default function RegisterSecondForm(props: RegisterSecondFormProps) {
   };
 
   const addLecture = (lectureId: number) => {
-    console.log(lectures);
     setLectures((prevLectures) =>
       prevLectures.map((lecture) => (lecture.id === lectureId ? { ...lecture, selected: !lecture.selected } : lecture))
     );
   };
 
   useEffect(() => {
-    // 컴포넌트가 처음 렌더링될 때 강의 목록을 가져옴
     fetchLectures();
   }, []);
 

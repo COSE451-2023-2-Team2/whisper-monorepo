@@ -7,11 +7,8 @@ export default function ButtonLecture(
     isSelected: boolean;
   }
 ) {
-  console.log(props.isSelected);
   return (
-    <div
-      className={`${s.button_lecture} ${props.isSelected ? s.selected : ""}`}
-    >
+    <div className={`${s.button_lecture} ${props.isSelected ? s.selected : ""}`}>
       <Button onClick={props.onClick}>{props.name}</Button>
     </div>
   );
