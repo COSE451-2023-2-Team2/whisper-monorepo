@@ -1,6 +1,10 @@
 # whisper-monorepo
 
->💨 Whisper is an anonymous group-chat application for university class.
+>💨 **Whisper is an anonymous group-chat application for university class.**
+
+<br>
+
+![이미지](https://github.com/COSE451-2023-2-Team2/whisper-monorepo/blob/master/demo_image.png)
 
 <br>
 
