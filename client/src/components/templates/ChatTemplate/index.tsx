@@ -9,69 +9,6 @@ import { Chat } from "@/store/GlobalContext.d";
 export default function ChatTemplate() {
   const [chatContext] = useContext(ChatContext);
 
-  // const mockingChat: Chat[] = [
-  //   {
-  //     userName: "Pengtoshi",
-  //     message: "d",
-  //     date: new Date()
-  //   },
-  //   {
-  //     userName: "Pengtoshi",
-  //     message: "d",
-  //     date: new Date()
-  //   },
-  //   {
-  //     userName: "Pengtoshi",
-  //     message: "d",
-  //     date: new Date()
-  //   },
-  //   {
-  //     userName: "Pengtoshi",
-  //     message: "d",
-  //     date: new Date()
-  //   },
-  //   {
-  //     userName: "Pengtoshi",
-  //     message: "d",
-  //     date: new Date()
-  //   },
-  //   {
-  //     userName: "doyam",
-  //     message: "d",
-  //     date: new Date()
-  //   },
-  //   {
-  //     userName: "doyam",
-  //     message: "d",
-  //     date: new Date()
-  //   },
-  //   {
-  //     userName: "shubit2",
-  //     message: "d",
-  //     date: new Date()
-  //   },
-  //   {
-  //     userName: "Pengtoshi",
-  //     message: "d",
-  //     date: new Date()
-  //   },
-  //   {
-  //     userName: "shubit2",
-  //     message: "d",
-  //     date: new Date()
-  //   },
-  //   {
-  //     userName: "Pengtoshi",
-  //     message: "d",
-  //     date: new Date()
-  //   },
-  //   {
-  //     userName: "doyam",
-  //     message: "d",
-  //     date: new Date()
-  //   }
-  // ];
-
   return (
     <div className={s.chat_template}>
       <ChatInfo></ChatInfo>

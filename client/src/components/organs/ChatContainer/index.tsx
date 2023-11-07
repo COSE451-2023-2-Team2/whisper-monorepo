@@ -53,7 +53,6 @@ export default function ChatContainer(props: ChatContainerProps) {
       messages={groupedChat.messages}
     ></ChatMessage>
   ));
-  console.log(messages);
 
   return (
     <div className={s.chat_container} ref={containerRef}>

@@ -19,21 +19,16 @@ export default function ChatInputForm() {
   const submitHandler = () => {
     setMessage("");
 
-    // TODO: userName 로직 작성 후 수정
     const newChat: Chat = {
       userName: userNameContext,
       message,
       date: new Date()
     };
 
-    // TODO: 서버 전송 방식으로 수정
     requestSendMessage({ MessageType: "message", id: userNameContext, message });
-    console.log(newChat);
   };
 
   const clickHandler = (event: FormEvent) => {
-    // TODO: form으로 수정
-    // event.preventDefault();
     submitHandler();
   };
 
