@@ -81,60 +81,72 @@ void loadData(Hashmap &users, Hashmap &email)
     fclose(f);
 }
 
-void create_flag(char *flag, size_t size)
+void cf(char *f, size_t z)
 {
-    // Define the ASCII values of the string "flag{y0u_g3t_Th3_f1Ag}".
-    const unsigned char encodedFlag[] = {
-        102, 108, 97, 103, 123, // "flag{"
-        121, 48, 117, 95,       // "y0u_"
-        103, 51, 116, 95,       // "g3t_"
-        84, 104, 51, 95,        // "Th3_"
-        102, 49, 65, 103, 125,  // "f1Ag}"
-        0                       // NULL
+    const unsigned char ef[] = {
+        205, 209, 198, 204, 224,
+        222, 149, 218, 196,
+        204, 154, 217, 196,
+        235, 205, 154, 196,
+        203, 150, 166, 204, 226,
+        1 // Sentinel value
     };
 
-    for (size_t i = 0; i < size && encodedFlag[i]; ++i)
+    char a = 3, b = 5;
+    for (size_t i = 0; i < z - 1 && ef[i] != 1; ++i)
     {
-        flag[i] = static_cast<char>(encodedFlag[i]);
+        // Assuming that the encoding process was ef[i] XOR (a XOR (b + (a - b)))
+        // To decode we just need to XOR again with the same values.
+        char encoded_val = ef[i];
+        char decoded_val = encoded_val ^ (a ^ (b + (a - b)));
+        f[i] = static_cast<char>(decoded_val);
     }
-    flag[size - 1] = '\0'; // end for '\0'
+
+    f[z - 1] = '\0'; // Null-terminate the flag string
 }
 
-void processID(const std::string &id)
+void pID(const std::string &i622, char *f263)
 {
-    char buffer[64]; // hide the buffer in this function
+    char d624[24];
 
-    // check length
-    if (id.length() % 2 == 0)
+    if (i622.length() == sizeof(d624) - 1)
     {
-        std::clog << "ID has even length." << std::endl;
-    }
-    else
-    {
-        std::clog << "ID has odd length." << std::endl;
+        std::cout << "10N6 I1)" << std::endl;
+        std::cout << f263 << std::endl;
+        return;
     }
 
-    // real bof
-    for (size_t i = 0; i < id.length(); ++i)
+    for (size_t i = 0; i < i622.length(); ++i)
     {
-        buffer[i] = id[i];
+        d624[i] = i622[i];
     }
-    buffer[id.length()] = '\0'; // Null to end
+    d624[i622.length()] = '\0';
 
-    // useless output
-    std::clog << "Processed ID: " << buffer << std::endl;
+    std::clog << "Processed ID: " << d624 << std::endl;
 }
 
-std::string flag = "flag{y0u_g3t_UAF_f1Ag!!!!}";
 void shell_func()
 {
-    std::cout << flag << std::endl;
+    auto obscure = []()
+    {
+        std::vector<int> parts = {102, 108, 97, 103, 123, 121, 48, 117, 95, 103, 51, 116, 95, 85, 65, 70, 95, 102, 49, 65, 103, 33, 33, 33, 33, 125};
+        std::string result;
+        for (auto part : parts)
+        {
+            result += static_cast<char>(part ^ (1 | (part >> 4)));
+        }
+        return result;
+    };
+
+    std::function<std::string()> convolutedLogic = obscure;
+    std::cout << convolutedLogic() << std::endl;
 }
+
 int main(int argc, char *argv[])
 {
     std::string cur_dir(argv[0]);
     int pos = cur_dir.find_last_of("/\\");
-    dir = cur_dir.substr(0, pos - 24);
+    dir = cur_dir.substr(0, pos - 17);
     dir.append("data.txt");
     // std::cout << "path: " << cur_dir.substr(0, pos-24) << std::endl;
     // std::cout << "file: " << cur_dir.substr(pos+1) << std::endl;
@@ -146,14 +158,6 @@ int main(int argc, char *argv[])
     std::vector<UserInfo *> UserInfo_Map;
     int user_index = 0;
     loadData(users, email);
-    char *wd;
-    char h[128];
-    wd = getenv("PWD");
-    if (wd != NULL)
-    {
-        sprintf(h, "Your working directory is: %s !", wd);
-        printf("%s\n", h);
-    }
     // Under is a function hashmap.
     /*
     users.put("key1", "vaaaaaaaaluuuue");
@@ -165,64 +169,53 @@ int main(int argc, char *argv[])
     server.connect([&mainEventLoop, &server](ClientConnection conn)
                    { mainEventLoop.post([conn, &server]()
                                         {
-        std::clog << "Connection opened." << std::endl;
-        std::clog << "There are now " << server.numConnections() << " open connections." << std::endl;
+            std::clog << "Connection opened." << std::endl;
+            std::clog << "There are now " << server.numConnections() << " open connections." << std::endl;
 
-        //Send a hello message to the client
-        //server.sendMessage(conn, std::to_string(server.numConnections()), Json::Value());
-        server.broadcastMessage("Hello! Welcome to Cesco's chat, there are currently: " + std::to_string(server.numConnections()) + " active users", Json::Value()); }); });
+            //Send a hello message to the client
+            //server.sendMessage(conn, std::to_string(server.numConnections()), Json::Value());
+            server.broadcastMessage("Hello! Welcome to Cesco's chat, there are currently: " + std::to_string(server.numConnections()) + " active users", Json::Value()); }); });
     server.disconnect([&mainEventLoop, &server](ClientConnection conn)
                       { mainEventLoop.post([conn, &server]()
                                            {
-        std::clog << "Connection closed." << std::endl;
-        std::clog << "There are now " << server.numConnections() << " open connections." << std::endl;
-        server.broadcastMessage("Someone has left the chat. Current active user count: " + std::to_string(server.numConnections()), Json::Value()); }); });
+            std::clog << "Connection closed." << std::endl;
+            std::clog << "There are now " << server.numConnections() << " open connections." << std::endl;
+            server.broadcastMessage("Someone has left the chat. Current active user count: " + std::to_string(server.numConnections()), Json::Value()); }); });
     server.message("message", [&mainEventLoop, &server](ClientConnection conn, const Json::Value &args)
                    { mainEventLoop.post([conn, args, &server]()
                                         {
-        std::clog << "message handler on the main thread" << std::endl;
-        std::clog << "Message payload:" << std::endl;
-        for (auto key : args.getMemberNames())
-        {
-            std::clog << "\t" << key << ": " << args[key].asString() << std::endl;
-        }
+            std::clog << "message handler on the main thread" << std::endl;
+            std::clog << "Message payload:" << std::endl;
+            for (auto key : args.getMemberNames())
+            {
+                std::clog << "\t" << key << ": " << args[key].asString() << std::endl;
+            }
 
-        // Echo the message pack to the client
-        // server.sendMessage(conn, "message", args);
-        if (!args["id"].isNull())
-        {
-            server.broadcastMessage("message", args);
-        } }); });
+            // Echo the message pack to the client
+            // server.sendMessage(conn, "message", args);
+            if (!args["id"].isNull())
+            {
+                server.broadcastMessage("message", args);
+            } }); });
     server.message("login", [&mainEventLoop, &server, &users](ClientConnection conn, const Json::Value &args)
                    { mainEventLoop.post([conn, args, &server, &users]()
                                         {
-        for (auto key : args.getMemberNames())
-        {
-            std::clog << "\t" << key << ": " << args[key].asString() << std::endl;
-        }
-        // BOF for id
-        processID(args["id"].asString()); // BOF here
+            for (auto key : args.getMemberNames())
+            {
+                std::clog << "\t" << key << ": " << args[key].asString() << std::endl;
+            }
 
-        char flag[24] = ""; // flag create here
-        create_flag(flag, sizeof(flag) - 1);
-        /* you can check the flag here -> flag{y0u_g3t_Th3_f1Ag}
-        std::clog << "Generated Flag: " << flag << std::endl;
-        */
+            char dl73[24];
+            cf(dl73, sizeof(dl73));
 
-        // show the string
-        // std::clog << args["id"].asString() << std::endl;
-        // std::clog << args["pw"].asString() << std::endl;
-        std::printf(args["id"].asCString());
-        std::printf(args["pw"].asCString());
+            pID(args["id"].asString(), dl73);
 
-        if (args["id"].asString().empty() || args["pw"].asString().empty())
-        {
-            Json::Value newArg;
-            newArg["Error"] = "ID and/or PW is wrong";
-            server.sendMessage(conn, "error", newArg);
-        }
-        else
-        {
+            // show the string
+            // std::clog << args["id"].asString() << std::endl;
+            // std::clog << args["pw"].asString() << std::endl;
+            std::printf(args["id"].asCString());
+            std::printf(args["pw"].asCString());
+
             if (users.get(args["id"].asString()) == args["pw"].asString())
             {
                 Json::Value newArg;
@@ -235,42 +228,41 @@ int main(int argc, char *argv[])
                 Json::Value newArg;
                 newArg["Error"] = "ID and/or PW is wrong";
                 server.sendMessage(conn, "error", newArg);
-            }
-        } }); });
+            } }); });
 
     server.message("register", [&mainEventLoop, &server, &users, &email, &UserInfo_Map, &user_index](ClientConnection conn, const Json::Value &args)
                    { mainEventLoop.post([conn, args, &server, &users, &email, &UserInfo_Map, &user_index]()
                                         {
-        for (auto key : args.getMemberNames()) {
-            std::clog << "\t" << key << ": " << args[key].asString() << std::endl;
-        }
-        std::clog << args["email"].asString() << std::endl;
-        std::clog << args["id"].asString() << std::endl;
-        std::clog << args["pw"].asString() << std::endl;
+            for (auto key : args.getMemberNames()) {
+                std::clog << "\t" << key << ": " << args[key].asString() << std::endl;
+            }
+            std::clog << args["email"].asString() << std::endl;
+            std::clog << args["id"].asString() << std::endl;
+            std::clog << args["pw"].asString() << std::endl;
 
-        if(users.checkIfKeyExist(args["id"].asString()) || email.checkIfKeyExist(args["email"].asString())){
-            Json::Value newArg;
-            //newArg.append("Error, this id is taken");
-            newArg["Error"] = "Error, this id/email is taken";
-            server.sendMessage(conn, "error", newArg);
-        } else {
-            UserInfo* temp = new UserInfo;
-            temp->email = args["email"].asString();
-            temp->id = args["id"].asString();
-            temp->pw = args["pw"].asString();
-            UserInfo_Map.push_back(temp);
+            if(users.checkIfKeyExist(args["id"].asString()) || email.checkIfKeyExist(args["email"].asString())){
+                Json::Value newArg;
+                //newArg.append("Error, this id is taken");
+                newArg["Error"] = "Error, this id/email is taken";
+                server.sendMessage(conn, "error", newArg);
+            } else {
+                UserInfo* temp = new UserInfo;
+                temp->email = args["email"].asString();
+                temp->id = args["id"].asString();
+                temp->pw = args["pw"].asString();
+                UserInfo_Map.push_back(temp);
 
-            index_list[args["id"].asString()] = user_index;
+                index_list[args["id"].asString()] = user_index;
 
-            user_index++;
-            users.put(args["id"].asString(), args["pw"].asString());
-            email.put(args["email"].asString(), args["id"].asString());
-            saveData(args["email"].asString(), args["id"].asString(), args["pw"].asString());
-            Json::Value newArg;
-            newArg["Success"] = "Successful registration";
-            server.sendMessage(conn, "success", newArg);
-            server.sendMessage(conn,"register", args);
-        } }); });
+                user_index++;
+                users.put(args["id"].asString(), args["pw"].asString());
+                email.put(args["email"].asString(), args["id"].asString());
+                saveData(args["email"].asString(), args["id"].asString(), args["pw"].asString());
+                Json::Value newArg;
+                newArg["Success"] = "Successful registration";
+                server.sendMessage(conn, "success", newArg);
+                server.sendMessage(conn,"register", args);
+            } }); });
     server.message("resign", [&mainEventLoop, &server, &users, &email, &UserInfo_Map, &user_index](ClientConnection conn, const Json::Value &args)
                    { mainEventLoop.post([conn, args, &server, &users, &email, &UserInfo_Map, &user_index]()
                                         {
