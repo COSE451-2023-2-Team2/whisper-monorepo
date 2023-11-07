@@ -1,6 +1,6 @@
 # whisper-monorepo
 
-Whisper is an anonymous group-chat application for university class.
+>💨 Whisper is an anonymous group-chat application for university class.
 
 <br>
 
@@ -27,12 +27,14 @@ Whisper is an anonymous group-chat application for university class.
 ### How to install
 <br>
 
+You should install Docker and docker-compose to run this project. <br>
+Normally, docker-compose is **automatically installed with docker**. If is not, download in [here](https://github.com/docker/compose/releases).
 ```bash
 git clone https://github.com/COSE451-2023-2-Team2/whisper-monorepo
 docker-compose up -d
 ```
 
-You can access with `http://localhost:3000`.
+You can access the client with `http://localhost:3000`.
 
 <br>
 
@@ -41,6 +43,14 @@ You can access with `http://localhost:3000`.
 
 You can check each commit record in individual repository.
 
-- Frontend: https://github.com/COSE451-2023-2-Team2/whisper-client
+- Client: https://github.com/COSE451-2023-2-Team2/whisper-client
 - Server: https://github.com/COSE451-2023-2-Team2/whisper-server
+
+<br>
+
+### Authors
+<br>
+
+This project is built by **team CESCO in COSE441**, Korea Univ.
+
 
