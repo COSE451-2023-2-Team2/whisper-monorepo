@@ -34,7 +34,8 @@ git clone https://github.com/COSE451-2023-2-Team2/whisper-monorepo
 docker-compose up -d
 ```
 
-You can access the client with `http://localhost:3000`.
+You can access the client with `http://localhost:3000`. <br>
+If you want to communicate between multiple clients, change the `ws://localhost:8000` to the running server's ip address. <br> (in `client/src/hooks/useSocket.tsx`)
 
 <br>
 
