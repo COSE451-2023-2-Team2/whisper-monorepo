@@ -51,6 +51,6 @@ You can check each commit record in individual repository.
 ### Authors
 <br>
 
-This project is built by **team CESCO in COSE441**, Korea Univ.
+This project is built by **team CESCO in COSE451**, Korea Univ.
 
 
