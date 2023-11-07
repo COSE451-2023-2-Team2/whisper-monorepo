@@ -43,7 +43,11 @@ export default function RegisterSecondForm(props: RegisterSecondFormProps) {
         ></LectureSelectField>
       </div>
       <div className={s.register_button}>
-        <ButtonSubmit name="Sign up" disabled={!props.isValidUserName} onClick={props.confirmHandler}></ButtonSubmit>
+        <ButtonSubmit
+          name="Sign up"
+          disabled={!(props.isValidUserName === "true")}
+          onClick={props.confirmHandler}
+        ></ButtonSubmit>
       </div>
     </>
   );
