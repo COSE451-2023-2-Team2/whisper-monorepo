@@ -37,6 +37,17 @@ Normally, docker-compose is **automatically installed with docker**. If is not, 
 git clone https://github.com/COSE451-2023-2-Team2/whisper-monorepo
 docker-compose up -d
 ```
+or you can manually run each Dockerfile: <br>
+(in server folder) <br>
+```bash
+docker build -t whisper-server .
+docker run -d --rm --name whisper-server -p 8000:8000 whisper-server
+```
+(in client folder) <br>
+```bash
+docker build -t whisper-client .
+docker run -d --rm --name whisper-client -p 3000:3000 whisper-client
+```
 
 You can access the client with `http://localhost:3000`. <br>
 If you want to communicate between multiple clients, change the `ws://localhost:8000` to the running server's ip address. <br> (in `client/src/hooks/useSocket.tsx`)
